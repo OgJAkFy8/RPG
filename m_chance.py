@@ -1,11 +1,9 @@
 from random import randint
 import time
-#from modgamepic import location
-
-vDirection = "G"
 
 
-## Functions 
+## Functions -----------
+# Coin Flip
 def coin(flips=1,cointype="silver"):
     if cointype == "magic":
         mc = input("Would you like heads [0] or tails [1]?")
@@ -17,16 +15,12 @@ def coin(flips=1,cointype="silver"):
             result = randint(0,1)
         else:
             result = mc
-
         if int(result) == 0:
             print("Flip {0} is heads.".format(i+1))
         else:
             print("Flip {0} is tails.".format(i+1))
-
-
-        #input("Again?")
-
-
+# ----------------------------
+# Dice Rolling
 def rolldice(sides,times=1,dicetype='ivory'):
     rollTotal = 0
     print("Rolling the {} die.".format(dicetype),end="\n")
