@@ -1,53 +1,19 @@
 from random import randint
 import time
-from GamePic import location
+#from GamePic import location
+from gameMove import *
 
 vDirection = "G"
+game = "red"
 
 
 ## Functions 
-def rolldice(sides):
-    if sides == 2:
-        print("Flipping gold coin")
-        result = randint(0,sides)
-    elif sides == 4:
-        while i > 20:
-            result = randint(1,sides)
-            print(result)
-    elif sides == 6:
-        while i > 20:
-            result = randint(1,sides)
-            print(result)
-    elif sides == 8:
-        while i > 20:
-            result = randint(1,sides)
-            print(result)
-    elif sides == 10:
-        while i > 20:
-            result = randint(1,sides)
-            print(result)
-    elif sides == 20:
-        while i > 20:
-            result = randint(1,sides)
-            print(result)
-            i= i-1
-            j=.125+.125
-            time.sleep(j)
-    elif sides == 100:
-        while i > 20:
-            result = randint(1,sides)
-            print(result)
-    else:
-        print("____________")
-    return result
-
 class weapon:
     def __init__(self,name,hitpoint,magic):
         self.name = name
         self.damage = hitpoint
         self.magic = magic
-
-        #def add_
+        
 
 class monster:
     def __init__(self, name, hitpoint, strngth):
@@ -115,42 +81,45 @@ class hero:
 eja = hero("Erik",9,"club")
 troll = monster("Troll",10,2)
 
-while vDirection != "L":
-    print("You are standing in a space.")
-    location("hall")
-    #GamePic.py
-    vChooseDirection = input("Choose a direction F=Forward, R=Right Door, T=Trap Door, L-leave: ")
+while game != "exit":
+    vSurrounding = ["Hallway","Door","Trapdoor"]
+    print("Looking around at your surroundings you see a",vSurrounding[randint(0,2)])
+
+    vChooseDirection = input("Choose a direction F=Forward, R=Right Door, T=Trap Door, L=leave: ")
     vDirection = vChooseDirection.upper()
-    if vDirection == "R":
-        print('You open the door and seen a troll')
-        RunFight = input("Run or Attack? [R/A] ").lower()
-        if RunFight == "A" or "a":
-            print(eja.health)
-            modBattle(eja.health,troll.health)
-        elif vDirection == "T":
-            print('The trap door is heavy and you need to get help')
-            print(" ")
-            vHelp = input("Do you ask for help or just leave? H=Help, L=Leave: ").lower()
-            if vHelp == "H" or "h":
-                print("You ask the group for help")
-                vYesNo = randint(0,1)
-            if vYesNo == 0:
-                print(vYesNo)
-                print("Nobody wants to help")
-            else:
-                print(vYesNo)
-                print("One of your team members help")
-                vYesNo = randint(0,10)
-                if vYesNo < 5:
-                    print(vYesNo)
-                    print("You open the trap door and see a sleeping dragon")
-                else:
-                    print(vYesNo)
-                    print("You open the trap door and are eaten by the dragon inside")
-    elif vDirection == "F":
-        print('You move on down the hallway')
-    else:
-        print('You did not select anything correctly. And in this case not making a choice just stops the program.')
-        vDirection = ""
-        print('Good bye')
-exit
+
+    turn(vDirection)
+    game = vChooseDirection
+
+
+##
+##if vDirection == "R":
+##        print('You open the door and seen a troll')
+##        RunFight = input("Run or Attack? [R/A] ").lower()
+##        if RunFight == "A" or "a":
+##            print(eja.health)
+##            modBattle(eja.health,troll.health)
+##elif vDirection == "T":
+##        print('The trap door is heavy and you need to get help')
+##        print(" ")
+##        vHelp = input("Do you ask for help or just leave? H=Help, L=Leave: ").lower()
+##        if vHelp == "H" or "h":
+##            print("You ask the group for help")
+##            vYesNo = randint(0,1)
+##            if vYesNo == 0:
+##                print(vYesNo)
+##                print("Nobody wants to help")
+##            else:
+##                print(vYesNo)
+##                print("One of your team members help")
+##                vYesNo = randint(0,10)
+##                if vYesNo < 5:
+##                    print(vYesNo)
+##                    print("You open the trap door and see a sleeping dragon")
+##                else:
+##                    print(vYesNo)
+##                    print("You open the trap door and are eaten by the dragon inside")
+##elif vDirection == "F":
+##        print('You move on down the hallway')
+##else:
+##        exit
