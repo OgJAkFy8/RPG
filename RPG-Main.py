@@ -81,16 +81,6 @@ class hero:
 eja = hero("Erik",9,"club")
 troll = monster("Troll",10,2)
 
-while game != "exit":
-    vSurrounding = ["Hallway","Door","Trapdoor"]
-    print("Looking around at your surroundings you see a",vSurrounding[randint(0,2)])
-
-    vChooseDirection = input("Choose a direction F=Forward, R=Right Door, T=Trap Door, L=leave: ")
-    vDirection = vChooseDirection.upper()
-
-    turn(vDirection)
-    game = vChooseDirection
-
 
 ##
 ##if vDirection == "R":
