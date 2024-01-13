@@ -7,12 +7,14 @@ import time
 def coin(flips=1,cointype="silver"):
     if cointype == "magic":
         mc = input("Would you like heads [0] or tails [1]?")
-        cointype = "wooden"
-    print("Flipping a {0} coin".format(cointype))
+        print("Flipping a wooden coin")
+        # cointype = "wooden"
+    else:
+        print("Flipping a {0} coin".format(cointype))
     for i in range(flips):
         time.sleep(.33)
         result = randint(0,1)
-        if cointype == "wooden":
+        if cointype == "magic":
             result = mc
         if int(result) == 0:
             print("Flip #{0} is heads.".format(i+1))
