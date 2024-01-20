@@ -7,3 +7,5 @@ Currently working in Pyton version is 3.12
 
 The movement module has a "match/case" statement that requires at least 3.10
 
+1/20/2024 - Updated the Weapon class
+

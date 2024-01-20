@@ -54,22 +54,12 @@ class Weapon:
     kind = ""
 
     # if kind = "Magic"
-    hp = 5  # Hit Points. The damage it can do in one use
+    hp = 5  # Hit Points. The amount of rounds it can be used
     sl = 1  # Skill Level.  The amount of skill needed to use this weapon
-    ad = 1  # Attack Duration. The amount of rounds it can be used
+    ap = 1  # Attack Power. The damage it can do in one use
 
-    def __init__(self, name,hitpoint,level):
+    def __init__(self, name):
         self.name = name
-        self.hp = hitpoint
-        self.level = level
-
-    def __str__(self):
-        return f"{self.name}({self.hp})"
-
-    def normalattack(self):
-        return self.hp + 0
-
-
 
 
 class Holder:

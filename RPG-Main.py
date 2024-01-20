@@ -52,9 +52,9 @@ class hero:
         #vMonsterH = Troll.health
 
         while vHeroH > 0:
-            RunFight = input("Run or Attack? [R/A] ")
+            RunFight = input("Run or Attack? [R/A] ").upper()
             print(vHeroH)
-        if RunFight == "A" or "a":
+        if RunFight == "A":
             heroAttack = randint(0,2)
             vMonsterH = vMonsterH - heroAttack
             monsterAttack = randint(0, 3)

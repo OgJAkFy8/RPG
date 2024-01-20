@@ -1,32 +1,25 @@
-axeHP= 3
-axeSkill=1
-axeMagicHP=6
-axeMagicSkill=8
+class Weapon:
+    magic = 0  # Set to 1 if magic
+    kind = ""
 
-Skill=6
+    # if kind = "Magic"
+    hp = 5  # Hit Points. The damage it can do in one use
+    sl = 1  # Skill Level.  The amount of skill needed to use this weapon
+    ad = 1  # Attack Duration. The amount of rounds it can be used
 
+    def __init__(self, name, hp, level):
+        self.name = name
+        self.hp = hp
+        self.level = level
 
+    def __str__(self):
+        return f"{self.name}({self.hp})"
 
-#if axeMagicSkill > 7:
- #   axeMagicHP = 
-import math
-
-def norm(x):
-    y = math.exp(-x**2/2)/math.sqrt(2*math.pi)
-    return y
-
-
-
-
-
-##def sword(HP,Skill,Magic):
-##    if Magic == "Yes":
-##        If Skill > 7:
-##            HP=HP*2
-##        else:
-##            print("You do not have enough skill to use this magic."
-##    return (HP)
+    def normalattack(self):
+        y = self.hp * self.level
+        return y
 
 
-
-    
+A1 = Weapon('axe', 5, 2)
+print(A1)
+print(A1.normalattack())
