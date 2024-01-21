@@ -1,4 +1,4 @@
-class Monster:
+class Hero:
     hp = 2  # Hit Points
     sl = 5  # Skill Level
     ap = 5  # Attack Power
@@ -40,7 +40,7 @@ class Spell:
 
 class Foo(object):
     def __init__(self, q, **keywords):
-        if a == "":
+        if q == "":
             print("No empty strings")
         else:
             self.on_g()

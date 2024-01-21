@@ -1,3 +1,5 @@
+# Light version of the game that can (maybe) stand alone.  Should be coded separately from programs labled "gamexxxx.py"
+
 from random import randint
 import time
 #from GamePic import location
